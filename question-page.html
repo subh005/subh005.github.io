@@ -37,25 +37,35 @@
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
 
 <script type="text/javascript">
-	$.getJSON("https://github.com/subh005/BBDgame/blob/master/questions.json", function(result){
+
+$.ajax({
+		type:'GET',
+        url: "https://raw.githubusercontent.com/subh005/BBDgame/master/questions.json",
+        dataType: 'json',
+        success: function(result){
             $.each(result.quiz, function(i, f){
-            	/*var allsetcontent = '<div class="set-container" id="set-container'+f.setId+'">'*/
+
               $.each(f.setone, function(i, r){
-              	
-              	var setcontent = '<div>test001</div>'
-              	/*$(setcontent).appendTo(".testContainer");
+              	alert(r.question);
+              
+          });
+          });
+              
+        }
+    });
+
+	
+	/*$.getJSON("https://raw.githubusercontent.com/subh005/grew/master/person-data.json", function(result){
+            $.each(result.products, function(i, f){
+            	
+              $.each(f.montlyfour, function(i, r){
               });
-              /*+'</div>'*/
-              $(setcontent).appendTo(".testContainer");
           });
-          });
-          
-      });
-
-
+        });
+*/
 	function checkAnswer(answervalue){
 		var answer = answervalue;
 		if (answer == 1){
