@@ -40,10 +40,10 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
 <script type="text/javascript">
-	$.getJSON("https://raw.githubusercontent.com/subh005/grew/master/person-data.json", function(result){
-            $.each(result.products, function(i, f){
+	$.getJSON("https://github.com/subh005/BBDgame/blob/master/questions.json", function(result){
+            $.each(result.quiz, function(i, f){
             	/*var allsetcontent = '<div class="set-container" id="set-container'+f.setId+'">'*/
-              $.each(f.montlyfour, function(i, r){
+              $.each(f.setone, function(i, r){
               	
               	var setcontent = '<div>test001</div>'
               	/*$(setcontent).appendTo(".testContainer");
