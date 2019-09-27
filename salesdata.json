@@ -1,7 +1,7 @@
 {
 	"report": [{
 
-		"FSN": "ROBFJUIH6QYNE3P",
+		"RSN": "ROBFJUIH6QYNE3P",
 		"salesdata": [{ 
     "12:00 AM": 12143,
     "1:00 AM": 19296,
@@ -24,7 +24,7 @@
 	},
 	{
 
-		"FSN": "ROBFJR6VSJ6PJ2RE",
+		"RSN": "ROBFJR6VSJ6PJ2RE",
 		"salesdata": [{ 
 			"12:00 AM": 12343,
     "1:00 AM": 19096,
@@ -47,7 +47,7 @@
 	},
 	{
 
-		"FSN": "RVSFDWH679N2FDTK",
+		"RSN": "RVSFDWH679N2FDTK",
 		"salesdata": [{ 
 			"12:00 AM": 12943,
     "1:00 AM": 19896,
@@ -70,7 +70,7 @@
 	},
 	{
 
-		"FSN": "ROBFJ8TWQAHZC5DH",
+		"RSN": "ROBFJ8TWQAHZC5DH",
 		"salesdata": [{ "12:00 AM": 92343,
     "1:00 AM": 89096,
     "2:00 AM": 77739,
@@ -92,7 +92,7 @@
 	},
 	{
 
-		"FSN": "ROBFE6K7KQDSWAM8",
+		"RSN": "ROBFE6K7KQDSWAM8",
 		"salesdata": [{ "12:00 AM": 52128,
     "1:00 AM": 30102,
     "2:00 AM": 16121,
