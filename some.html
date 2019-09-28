@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>BBD</title>
+<style type="text/css">
+body{ font-size:24px; }
+.header{width:100%; height:100px; line-height:100px; text-align:center; color:#fff; font-weight:bold; border-bottom:1px solid #eee; box-shadow: 1px 1px 1px #eee; background-color: #2874f0; font-size: 44px;}
+.product-container{width:100%; height:200px; margin-top: 30px; box-shadow: 1px 1px 2px #eee; border:1px solid #eee;}
+.product-image{width:200px; height:200px; float:left;  background-size: 100% 100%;}
+.product-body{width:280px;  line-height: 40px; padding:10px 0px 10px 20px; float:left;}
+.product-sale{width: 100%; margin-top :10px; font-size:34px; color:#ff5252;}
+.product-title{ width:100%; margin-top:20px;  color:#000;}
+.category-body{width:500px; margin:auto; }	
+</style>
+</head>
+<body>
+<div class="header">BBD TOP SOLD</div>
+<div id="category-body-container" class="category-body-container"></div>
+<div id="category-body" class="category-body">
+</div>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+<script type="text/javascript">
+	$.ajax({
+		type:'GET',
+        url: "https://raw.githubusercontent.com/subh005/subh005.github.io/master/salesdata.json",
+        dataType: 'json',
+        success: function(result){
+        	 $.each(result.report, function(i, f){       	 	
+   var snip = '<div class="product-container" data-index="'+f.salesdata+'"><div class="product-image" style="background:' 
+    +'url('+f.imageurl+');"></div><div class="product-body"><div class="product-title">'+f.title+'</div>'
+    +'<div class="product-sale">'+f.salesdata+'</div></div>'
+
+$(snip).appendTo(".category-body-container");
+
+ 
+          });
+        	 sortproduct();
+        }
+        
+
+    });
+
+function sortproduct(){
+	var snipelems = $(".product-container");
+var array = [];
+for (var i = snipelems.length >>> 0; i--;) { 
+    array[i] = snipelems[i];
+}
+array.sort(function(a, b) {
+     return $(b).data('index') - $(a).data('index');     
+});
+var output = "";
+for (var i = 0; i < array.length; i++) { 
+    output += array[i].outerHTML;
+}
+$('#category-body').html(output);
+$('#category-body-container').html('');
+}
+
+setInterval(function(){ reload_page(); },30*60000);
+
+function reload_page()
+ {
+    window.location.reload(true);
+ }
+
+</script>
+</body>
+</html>
